@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UPP - Logowanie</title>
+</head>
+<body>
+    <h1>Uczelniana Platforma Projektowa - Ekran Logowania</h1>
+    <div id="panel">
+        <form method="Post" th:action="@{/}">
+            <label>Nazwa użytkownika:</label>
+            <input type="text" th:field="*{LoginHaslo.login}"/>
+            <label>Hasło:</label>
+            <input type="password" th:field="*{LoginHaslo.haslo}"/>
+            <input type="submit" value="Zaloguj">
+        </form>
+    </div>
+</body>
+</html>

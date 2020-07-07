@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administracyjny</title>
+</head>
+<body>
+
+<h2>Uzytkownicy systemu</h2>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Eska</th>
+        <th>Login</th>
+        <th>Haslo</th>
+        <th>Imie</th>
+        <th>Data Rejestracji</th>
+        <th>Email Uczelniany</th>
+        <th>Email Prywatny</th>
+    </tr>
+    <tr th:each="user: ${users}">
+        <td th:text="*{user.id}"></td>
+        <td th:text="*{user.eska}"></td>
+        <td th:text="*{user.login}"></td>
+        <td th:text="*{user.haslo}"></td>
+        <td th:text="*{user.imie}"></td>
+        <td th:text="*{user.dataRejestracji}"></td>
+        <td th:text="*{user.emailUczelniany}"></td>
+        <td th:text="*{user.emailPrywatny}"></td>
+    </tr>
+</table>
+
+<h2>Tematy</h2>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>nazwa</th>
+        <th>dataUtworzenia</th>
+        <th>ostatnioDodane</th>
+        <th>opis</th>
+    </tr>
+    <tr th:each="temat: ${tematy}">
+        <td th:text="*{temat.id}"></td>
+        <td th:text="*{temat.nazwa}"></td>
+        <td th:text="*{temat.dataUtworzenia}"></td>
+        <td th:text="*{temat.ostatnioDodane}"></td>
+        <td th:text="*{temat.opis}"></td>
+    </tr>
+</table>
+
+<h2>Posty</h2>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>wiadomosc</th>
+        <th>dataUtworzenia</th>
+        <th>uzytkownik_id</th>
+        <th>temat_id</th>
+    </tr>
+    <tr th:each="post: ${posty}">
+        <td th:text="*{post.id}"></td>
+        <td th:text="*{post.wiadomosc}"></td>
+        <td th:text="*{post.dataUtworzenia}"></td>
+        <td th:text="*{post.uzytkownik_id}"></td>
+        <td th:text="*{post.temat_id}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

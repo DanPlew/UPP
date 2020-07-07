@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UPP - Temat</title>
+</head>
+<body>
+    <h1>Uczelniana Platforma Projektowa - Strona Główna</h1>
+
+    <table border="1">
+        <tr>
+            <th>Id Uzytkownika</th>
+            <th>Data Utworzenia</th>
+            <th>Wiadomosc</th>
+        </tr>
+        <tr th:each="post: ${posty}">
+            <td th:text="*{post.uzytkownik_id}"></td>
+            <td th:text="*{post.dataUtworzenia}"></td>
+            <td th:text="*{post.wiadomosc}"></td>
+        </tr>
+    </table>
+
+    <form method="post" th:action="@{/temat}">
+        <label>Wiadomosc:</label>
+        <input type="text" th:field="*{post.wiadomosc}"/>
+        <input type="submit" value="Dodaj">
+    </form>
+</body>
+</html>
